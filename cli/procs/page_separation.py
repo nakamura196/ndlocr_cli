@@ -74,7 +74,7 @@ class PageSeparation(BaseInferenceProcess):
             推論処理の結果を保持する辞書型データ。
             基本的にinput_dataと同じ構造です。
         """
-        print('### Page Separation ###')
+        # print('### Page Separation ###')
         log_file_path = None
         if self.process_dump_dir is not None:
             log_file_path = os.path.join(self.process_dump_dir, self.cfg['page_separation']['log'])

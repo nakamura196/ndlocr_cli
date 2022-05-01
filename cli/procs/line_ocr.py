@@ -73,7 +73,7 @@ class LineOcrProcess(BaseInferenceProcess):
             基本的にinput_dataと同じ構造です。
         """
         result = []
-        print('### Line OCR Process ###')
+        # print('### Line OCR Process ###')
         result_xml = self._run_src_inference(input_data['img'], input_data['xml'],
                                              accept_empty=self.cfg['line_ocr']['accept_empty'],
                                              yield_block_page_num=self.cfg['line_ocr']['yield_block_page_num'],

@@ -63,7 +63,7 @@ class LayoutExtractionProcess(BaseInferenceProcess):
             推論処理の結果を保持する辞書型データ。
             基本的にinput_dataと同じ構造です。
         """
-        print('### Layout Extraction Process ###')
+        # print('### Layout Extraction Process ###')
         output_data = copy.deepcopy(input_data)
         inference_output = self._run_src_inference(img=input_data['img'],
                                                    img_path=input_data['img_file_name'],

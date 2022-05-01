@@ -73,7 +73,7 @@ class PageDeskewProcess(BaseInferenceProcess):
             推論処理の結果を保持する辞書型データ。
             基本的にinput_dataと同じ構造です。
         """
-        print('### Page Deskew Process ###')
+        # print('### Page Deskew Process ###')
         inference_output = self._run_src_inference(input_data['img'])
 
         # Create result to pass img_path and img data

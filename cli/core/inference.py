@@ -128,14 +128,15 @@ class OcrInferencer:
                 proc_dump_dir = os.path.join(dump_dir, proc.proc_name)
                 os.makedirs(proc_dump_dir, exist_ok=True)
 
-        for img_path in single_outputdir_data['img_list']:
+        from tqdm import tqdm
+        for img_path in tqdm(single_outputdir_data['img_list']):
             single_image_file_data = self._get_single_image_file_data(img_path, single_outputdir_data)
             output_dir = single_outputdir_data['output_dir']
             if single_image_file_data is None:
                 print('[ERROR] Failed to get single page input data for image:{0}'.format(img_path), file=sys.stderr)
                 continue
 
-            print('######## START PAGE INFERENCE PROCESS ########')
+            # print('######## START PAGE INFERENCE PROCESS ########')
             start_page = time.time()
 
             for proc in self.proc_list:
@@ -176,7 +177,7 @@ class OcrInferencer:
 
             # add inference result for single image file data to pred_list, including XML data
             pred_list.extend(single_image_file_output)
-            print('########  END PAGE INFERENCE PROCESS  ########')
+            # print('########  END PAGE INFERENCE PROCESS  ########')
 
         return pred_list
 
